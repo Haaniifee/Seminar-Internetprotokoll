@@ -61,7 +61,7 @@ germandbls={ß},
 \vspace*{2.0cm}\\
 vorgelegt von
 \vspace*{0.4cm}\\
-\textbf{Fulya Cankaya:} fulya-cankaya@hotmail.de \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de \\ 
+%\textbf{Fulya Cankaya:} fulya-cankaya@hotmail.de (6809050) \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de (6816065) \\ 
 \end{center}
 \vspace*{3.9cm}
 
@@ -217,10 +217,8 @@ Das Internetprotokoll (IP) ist routingfähig. Damit werden Datenpakete an Hosts g
 \section*{IP-Routing-Algorithmus}
 \addcontentsline{toc}{section}{IP-Routing-Algorithmus} 
 
-Der IP-Routing-Algorithmus gilt nicht nur für IP-Router, sondern für alle Host, die IP-Datenpakete empfangen können. Die empfangenen Datenpakete durchlaufen diesen Algorithmus bis das Datenpaket zugeordnet oder weitergeleitet werden kann.
-
-Die empfangenen Datenpakete durchlaufen diesen Algorithmus bis das Datenpaket zugeordnet oder weitergeleitet werden kann.
-An erster Stelle des Routing-Algorithmus steht die Frage "Ist das Datenpaket für mich?". Wenn die Ziel-Adresse des Datenpakets mit der eigenen IP-Adresse übereinstimmt, dann hat das Datenpaket sein Ziel erreicht und kann verarbeitet werden.
+Alle Datenpakete, die empfangen werden, durchlaufen einen Routing-Algoritmus. Dieser gewährleistet, dass die Datenpakete zugeordnet und zum Ziel-Empfänger weitergeleitet werden. \\
+An erster Stelle des Routing-Algorithmus steht die Frage \dq Ist das Datenpaket für mich?\dq . Wenn die Ziel-Adresse des Datenpakets mit der eigenen IP-Adresse übereinstimmt, dann hat das Datenpaket sein Ziel erreicht und kann verarbeitet werden. 
 Wenn die Adresse nicht übereinstimmt, dann wird die zweite Frage gestellt: "Ist das Datenpaket für mein Subnetz?". Dabei wird die Zieladresse mit der Subnetzmaske maskiert. Anhand des verbleibenden Adressanteils wird festgestellt, ob das Datenpaket in den eigenen Netzabschnitt (Subnetz oder Subnet) gehört.
 Stimmt auch das Subnetz nicht, wird die dritte Frage gestellt: "Ist mir die Route zum Empfänger des Datenpakets bekannt?". Manchmal wissen die Hosts die Route für bestimmte IP-Adressen. Wenn die Route bekannt ist, wird das Datenpaket über diese Route weitergeleitet.
 Ist die Route nicht bekannt wird die vierte Frage gestellt: "Ist mir ein Standard-Gateway bekannt, wohin ich das Datenpaket weiterleiten kann?". Das Standard-Gateway ist in der Regel ein Router, der eingehende Datenpakete anhand der Zieladresse und einigen Regeln an seine Routing-Ausgänge verteilt. Ist kein Standard-Gateway vorhanden führt das zu einer Fehlermeldung. Das Datenpaket wird verworfen.
