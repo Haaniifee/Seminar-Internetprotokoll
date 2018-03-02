@@ -1,0 +1,294 @@
+%\documentclass[12pt,a4paper]{scrbook}
+\documentclass[12pt,a4paper,listof=totoc,captions=nooneline]{scrreprt} 
+\usepackage{geometry}	
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{colortbl}	
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[hyphens]{url}
+%\usepackage{tocloft}
+\usepackage[colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black] {hyperref}
+\usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}	% Mathe
+
+\usepackage{selinput} 
+\SelectInputMappings{ 
+adieresis={ä}, 
+germandbls={ß}, 
+}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx}
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage{chngcntr}
+\counterwithout{equation}{chapter}
+
+
+\definecolor{uhhred}{cmyk}{0,100,100,0}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\addtokomafont{caption}{\centering}
+\AfterTOCHead[lof]{\renewcommand*{\numberline}[1]{\nonumberline}}
+\AfterTOCHead[toc]{\renewcommand*{\numberline}[1]{\nonumberline}}
+
+\begin{document}
+
+%\frontmatter
+\newgeometry{centering,left=2cm,right=2cm,top=2cm,bottom=2cm}
+\begin{titlepage}
+\includegraphics[scale=0.3]{UHH-Logo_2010_Farbe_CMYK.pdf}
+\vspace*{2cm}
+\Large
+\begin{center} 
+      {\color{uhhred}\textbf{\so{Seminar-Arbeit}}}
+%oder {\color{uhhred}\textbf{\so{MASTERTHESIS}}}
+\vspace*{2.0cm}\\
+{\LARGE \textbf{IP - Das Internetprotokoll}}
+\vspace*{2.0cm}\\
+vorgelegt von
+\vspace*{0.4cm}\\
+\textbf{Fulya Cankaya:} fulya-cankaya@hotmail.de \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de \\ 
+\end{center}
+\vspace*{3.9cm}
+
+\noindent 
+MIN-Fakultät \vspace*{0.4cm} \\ 
+Fachbereich Informatik \\
+Seminar Das Internet: Architektur und Anwendungen\\
+Leitung: Dr. Klaus-Dieter Heidtmann \\
+Abgabedatum: 30.03.2018
+
+
+
+\end{titlepage}
+
+\restoregeometry
+
+\tableofcontents
+
+\section*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis} 
+%\mainmatter 
+\newpage \section*{Einleitung}
+\addcontentsline{toc}{section}{Einleitung} 
+
+Im Rahmen des Seminars "Das Internet: Architektur und Anwendungen " geht es darum, den Grundaufbau und wichtige Anwendungen des Internets zu verstehen. Diese Hausarbeit orientiert sich speziell am Thema "Das Internetprotokoll". 
+Aufbauend auf der Definition der IP-Adresse werden vertieft in die Themen der IP-Adressierung, der Aufbau und Vergleich von IPv4 und IPv6 .... Eingegangen.\\
+Dies ist ein kleiner Einblick in das Thema und wird in den nächsten Kapiteln ausgearbeitet.
+
+\section*{IP-Adressierung -Allgemein}
+\addcontentsline{toc}{section}{IP-Adressierung -Allgemein} 
+Die IP-Adresse ist eine Adresse in Netzwerken, die auf dem Internetprotokoll aufbaut. Jedes Gerät, dass an einem Netz gebunden ist, bekommt eine IP-Adresse zugewiesen. Somit sind die Geräte eindeutig gekennzeichnet und identifizierbar. Einem Rechner können eine oder mehrere IP-Adressen zugeordnet werden. Die IP-Adresse dient dazu, dass Daten vom Absender zum Empfänger versendet werden. Der Transport der Daten ist übertragbar mit der Postanschrift eines Briefumschlages. Die Datenpakete sind mit einer IP-Adresse gekennzeichnet, sodass der Empfänger eindeutig identifiziert wird. Anhand der IP-Adresse leiten die Router die Datenpakete in die entsprechenden Subnetze und werden dort weiter transportiert. Eine IP-Adresse ist nicht verbindlich einem Empfänger zuzuordnen, sondern kann auch ein gesamtes Netz kennzeichnen. Beispiele hierfür sind Broadcast oder Multicast. Unter einem Broadcast versteht man eine Nachricht, die von einem Rechner ausgelöst wird. Dabei werden die Datenpakete an alle Rechner im selben Netz verschickt und auf keinen Fall über einen Router zu jeweils anderen Subnetzen weitergeleitet. Ein Broadcast wird in der Vermittlungstechnik einer Mehrpunktverbindung zugeordnet. Wichtiger Hinweis hierbei ist, dass IPv6 keine Broadcasts mehr unterstützt. Stattdessen wird Multicasts verwendet. Bei einem Multicast handelt es sich ebenso um eine Mehrpunktverbindung. Die Nachricht wird von einem Punkt zu einer beliebigen Gruppe versendet. Der Unterschied zum Broadcast ist, dass es bei einem Multicast notwendig ist, sich vorerst beim Sender anzumelden. Beim Broadcast hingegen werden die Inhalte an alle Teilnehmer im Netz gesendet. 
+
+\begin{figure}[H]
+\begin{subfigure}{0.4\textwidth}
+
+\includegraphics[width=0.4\textwidth]{bilder/b1.png}
+\subcaption{Subfigure Bild Nr. 1}
+
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=0.4\textwidth]{bilder/b2.png}
+\subcaption{Subfigure Bild Nr. 2}
+\end{subfigure}
+\caption[Abbildung 1: Broadcast und Multicast]{Broadcast und Multicast}
+\end{figure}
+
+
+\section*{IP-Adressierung-Verwendungszweck}
+\addcontentsline{toc}{section}{IP-Adressierung-Verwendungszweck} 
+Die Hauptaufgabe der IP-Adressierung besteht im Transport der Daten. Dabei werden die Daten vom Absender zum Empfänger mit Hilfe von Datenpaketen weitergeleitet.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b3.png}
+\end{center}
+\caption[Abbildung 2: Beispiel mit einem Klienten und Webserver für den Verwendungszweck der IP-Adressierung]{Beispiel mit einem Klienten und Webserver für den Verwendungszweck der IP-Adressierung}
+\end{figure}
+
+Beispielsweise ist ein Webserver von einem Webbrowser über die IP-Adresse erreichbar. So kann eine Kommunikation untereinander erfolgen. Dazu muss der Webbrowser bei einem Nameserver nach der zugehörigen IP-Adresse des Webservers anfragen, die einer Domain angehört. Dabei wird die URL zu einer IP-Adresse umgeformt mittels der Namensauflösung, welches im Kapitel Domain Namensraum behandelt wird. Diese IP-Adresse wird verwendet, um Daten an den Webserver zu senden.
+
+\section*{IP-Adressierung- Aufbau einer IPv4-Adresse}
+\addcontentsline{toc}{section}{IP-Adressierung- Aufbau einer IPv4-Adresse} 
+
+Jede IP-Adresse besteht aus 4 Zahlenblöcken. Diese wird als Dezimalzahl notiert. Die interne Verwaltung ist jedoch die binäre Darstellung. Dabei belegt jeder Zahlenblock 8 Bits. Somit sind Zahlen von 0-255 darstellbar. Da jeder Zahlenblock mit 8 Bits belegt ist, besteht eine IP-Adresse aus 32 Bits und deswegen sind insgesamt 232 = 4.294.967.296 IP-Adressen darstellbar.\\
+Beispiel:\\
+Dezimale Schreibweise: 171.15.245.1\\
+$\longrightarrow$ binäre Schreibweise: 10101011 00001111 11110101 00000001 \\
+Die IP-Adresse setzt sich zusammen aus einer Netzadresse und einer Hostadresse. Für die Trennung in Netz- und Hostadresse ist die Subnetzmaske verantwortlich. Diese bestimmt an welcher Stelle genau die Trennung stattfindet. Die Hostadresse bestimmt den Rechner und die Netzadresse bestimmt das Subnetz, um den Rechner letztendlich über die Hostadresse zu finden. Wenn man Datenpakete verschicken möchte, schaut man sich zunächst die Netzadresse an. Ist die Netzadresse sowohl beim Absender, als auch beim Empfänger identisch bleibt das Datenpaket im selben Subnetz und muss nicht über einen Standart-Gateway in ein anderes Subnetz mittels eines Routers weitergeleitet werden. 
+
+\section*{IP-Adressierung- Netzklassen}
+\addcontentsline{toc}{section}{IP-Adressierung- Netzklassen} 
+Netzwerke sind in verschiedene Klassen unterteilt. Die Klasse A hat eine Netzmaske von 255.0.0.0 und somit werden 8 Bits für die Netz-Adresse und 24 Bit für die Host Adresse verwendet. Insgesamt erhält man $2^{24} -2$ Hostadressen, die darstellbar sind. Der Adressbereich geht von 0-127. Bei der Klasse B ist die Subnetzmaske 255.255.0.0. Somit werden 16 Bits für die Netzadresse und 16 für die Hostadresse verwendet. Insgesamt $2^{16} -2$ Hosts im Netz. Der Adressbereich geht von 128-191.
+Bei der Klasse C ist die Subnetzmaske 255.255.255.0 und somit werden 24 Bits für die Netzadresse und 8 Bits für die Host Adresse verwendet. Durch die Netzklasse wird die Netzadresse, als auch die Hostadresse abgeleitet, da man anhand der Subnetzmaske festlegt, wie diese auszusehen haben.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b4.png}
+\end{center}
+\caption[Abbildung 3: Aufteilung in Netzklassen]{Aufteilung in Netzklassen}
+\end{figure}
+
+Netzklassen werden in der Praxis kaum verwendet. Aufgrund der Netzklassen wurden die meisten zur Verfügung stehenden öffentlichen IP-Adressen vergeben. Die Größe eines Netzwerkes wird anhand der Angabe der Subnetzmaske bestimmt und nicht aus der IP-Adresse und der Netzklasse.
+
+\section*{Classless Inter-Domain Routing}
+\addcontentsline{toc}{section}{Classless Inter-Domain Routing} 
+
+Unter einem Classless Inter-Domain Routing versteht man das effiziente Nutzen des bestehenden Adressraums einer IPv4-Adresse. Man möchte erreichen, dass die Routingtabellen reduziert werden, sodass der bestehende Adressraum effizient genutzt werden kann. Damit benötigt man die Netzklassen nicht mehr, da die IPv4-Adressen nicht mehr zu einer Klasse zugeordnet werden müssen. Zudem ist die Präfixlänge frei wählbar, sprich man erkennt, wie viele IPv4-Adressen für Hosts im Netzwerk verfügbar sind.
+
+\section*{IP-Adressierung IPv6}
+\addcontentsline{toc}{section}{IP-Adressierung IPv6} 
+
+Der Grund, weshalb IPv6 eingeführt wurde, ist, dass der IPv4 Adressraum in Zukunft ausgebraucht wird. Der IPv6 Adressraum besteht aus 128 Bits. Somit können $2^{128} = 340.282.366.920.938.463.463.374.607.431.768.211.456 \approx 3,4 \cdot 10^{38}$ ca. 340 Sextillionen IP-Adressen dargestellt werden. Die Dezimaldarstellung ist:\\ ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd.ddd. \\Die Adresse setzt sich zusammen aus 8 Blöcken mit jeweils 16 Bits. Die Notation dieser Adresse ist eine Hexadezimalzahl. Beispielsweise könnte diese so aussehen \dq 2001:0db8:85a3:0000:0000:8a2e:0370:7344\dq. Man verwendet die Hexadezimaldarstellung, weil die Dezimaldarstellung unübersichtlich wäre aufgrund der langen Adresse, die sich deshalb ergibt. Damit es übersichtlicher wird, werden zwei Oktette der Adresse zusammengefasst, sodass man insgesamt 8 Blöcke mit jeweils 16 Bit hat. Diese werden mit einem Doppelpunkt getrennt. Jeweils vier Bits der IPv6 Adresse stellen eine Hexadezimalzahl dar.
+
+\section*{IP-Adressierung IPv6 Adresszuweisung}
+\addcontentsline{toc}{section}{IP-Adressierung IPv6 Adresszuweisung} 
+
+Die ersten 32 Bits der IPv6 Adresse bekommt der Internetprovider von der Regional Internet Registry (RIR) zugewiesen. Diese werden in weitere Subnetze aufgeteilt. Der Internet Provider ist für die Zuteilung der Länge verantwortlich. Eine minimale Zuteilung eine /64-Netzes ist vorgeschrieben. Die erste Hälfte mit 64 Bit einer Adresse ist das Netzsegment und die restlichen 64 Bits gehören zum Interface-Identifier. Die beiden zusammen bilden die IPv6-Adresse. Üblicherweise wird der Interface-Identifier aus der Mac-Adresse der Schnittstelle bestimmt werden. Ein Beispiel hierfür ist:\\ 2001:0db8:85a3:08d3:1319:8a2e:0370:7347/64.
+
+\section*{IP-Adressierung-IPv6-Aufteilung der Adresse}
+\addcontentsline{toc}{section}{IP-Adressierung-IPv6-Aufteilung der Adresse} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b5.png}
+\end{center}
+\caption[Abbildung 4: IPv6-Aufteilung der Adresse]{IPv6-Aufteilung der Adresse}
+\end{figure}
+
+\section*{Dual Stack}
+\addcontentsline{toc}{section}{Dual Stack} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b6.png}
+\end{center}
+\caption[Abbildung 5: Dual Stack]{Dual Stack}
+\end{figure}
+
+Zurzeit besteht ein geringer Bestand an IPv4 Adressen. Wenn diese aufgebraucht sind, ist es notwendig auf IPv6 zurückzugreifen. Somit kann es zu einem Wechsel kommen, wenn der bestehende Adressbereich nicht effizient genutzt wird. Die Kunst hierbei ist, dass einerseits nicht nur die Einführung von IPv6 in Vordergrund steht, sondern gleichzeitig auch, dass IPv4 zur selben Zeit betrieben wird. Diesen Zustand bezeichnet man als "Dual Stack". Anhand der Abbildung wird im Folgenden auf die Funktionsweise eingegangen. \\
+Der DS-Lite besitzt einen Internet-Anschluss, der einen öffentlichen IPv6-Präfix erhält. Damit ist er von überall aus erreichbar. Aus dem bestehenden Präfix weist der Router allen Geräten im selben Netz öffentliche IPv6-Adressen zu, die sich ins Internet verbinden möchten. Diese werden mit dem IPv6 Internet verbunden. Der DS-Lite-Anschluss erhält im Allgemeinen keine öffentlichen IPv4-Adressen. Jedoch wird ihm eine private IPv4 Adresse zugeteilt, welches jedoch nicht vom Internet aus erreichbar ist. Vom Internet sind nur IPv6 Adressen erreichbar. Die privat adressierten IPv4-Pakete werden vom Provider zu einer öffentlichen IPv4-Adresse maskiert. Die Maskierung bezeichnet man als Carrier Grade NAT (CGN). Der DSL-Router funktioniert im Prinzip genauso. Dieser besitzt eine öffentliche IPv4-Adresse und weist allen Geräten im Netzwerk private Adressen zu. \\
+Man muss sowohl IPv4 als auch IPv6 betreiben, weshalb der Dual Stack bedeutend ist. Dieser Betrieb muss solange erfolgen, bis alle Geräte mit IPv6 umgehen können. Es gibt viele Endgeräte, die kein IPv6 unterstützen und erst durch entsprechende Komponenten ausgetauscht werden müssen. Außerdem ist der Markt für IPv6 nicht groß genug und eine Entwicklung als auch der Aufwand, die IPv4 Produkte auf IPv6 zu übertragen sich nicht lohnt.
+
+
+\section*{Vorteile von IPv6}
+\addcontentsline{toc}{section}{Vorteile von IPv6} 
+
+Die Vorteile der IPv6 Adressierung sind, dass aufgrund der längeren Adresse ein viel größerer Adressraum existiert. Es können mehrere IPv6-Adressen pro Hosts verwendet werden. Diese haben dementsprechend unterschiedliche Gültigkeitsbereiche. Zudem ist eine Autokonfiguration der einzelnen Adressen möglich und ein Multicast ist ebenso durch spezielle Adressen möglich. Die IPv6 Adressierung ermöglicht ein schnelleres Routing und eine Punkt-zu-Punkt-Verschlüsselung mit IPsec. IPsec ist dafür zuständig, dass eine sichere Kommunikation aufgebaut wird, welches beispielsweise über das Internet eine sichere Kommunikation ermöglichen kann, da das Internet ein unsicheres Netz ist. Auf dem DoD Model wird das IPsec der Internetschicht zugeordnet. IPsec ist eine Weiterentwicklung der IP-Protokolle. Auf der Netzwerkebene möchte man eine verschlüsselungsbasierte Sicherheit aufstellen. Mit IPsec wird die Authentizität der Paketreihenfolge mittesls Verschlüsselung gewährleistet. Die Datenpakete einer IPv6 Adresse sind bis zu 4 GByte groß.
+
+\section*{Statische und dynamische IP-Adresse}
+\addcontentsline{toc}{section}{Statische und dynamische IP-Adresse} 
+
+Nach der Zuweisung einer IP-Adresse ändert sich die IP-Adresse einer statischen Adresse nicht. Die Zuweisung selbst kann sowohl statisch als auch dynamisch sein. Zu einer statischen Adresse beispielsweise gehören Rechner, die sich fortlaufend im Internet befinden, wenn Sie bestimmte Dienste anbieten. Jeder Rechner kann sich eine eigene IP-Adresse zukommen lassen. Bei einer dynamischen IP-Adresse ist dies jedoch anders. Diese werden automatisch vom Internet Service Provider(ISP) vergeben, sobald man im Internet ist. Dynamisch Adressen ändern sich regelmäßig. Bei Routern beispielsweise ändert sich die IP-Adresse alle 24 Stunden. Dies geschieht in der Regel bei lokalen Netzwerken. Der Admin muss jedoch nicht jede einzelne statische IP-Adresse ins Netzwerk integrieren. In der Regel wird dies von einer Software übernommen, die für die Verteilung der dynamischen IP-Adressen zuständig sind. 
+
+\section*{Vergabe von IP-Adressen}
+\addcontentsline{toc}{section}{Vergabe von IP-Adressen} 
+
+Zuständig für die Vergabe von IP-Adressen ist der IANA .Die IANA vergibt gesamte IP-Adressblöcke an die RIR. Diese vergibt die IP-Adressen in Regionen. Die Vergabe von IP-Adressen erfolgt durch die oberste Instanz \dq Internet Assigned Numbers Authority \dq (IANA), die über den gesamten IP-Adressraum herrscht. Sie vergibt IP-Adressblöcke an so genannte \dq Regional Internet Registries\dq (RIR), die für die IP-Adressvergabe in Regionen zuständig sind. Diese vergeben ihrerseits IP-Adressbereiche an z.B. Internet-Service-Providern (ISP) wie Telekom, 1\&1, Vodafone, O2, die ihren Endkunden gegen eine Gebühr den Zugang zum Internet ermöglichen.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b7.png}
+\end{center}
+\caption[Abbildung 6: Vergabe von IP-Adressen]{Vergabe von IP-Adressen}
+\end{figure}
+
+Es gibt seit Februar 2005 insgesamt fünf regionale Vergabestellen, welche man als Regional Internet Registries (RIR) bezeichnet. Dazu gehören AfriNIC (African Network Information Centre). Diese ist zuständig für die Adressvergabe in Afrika. Hinzu kommt die APNIC (Asia Pacific Network Information Centre), welches zuständig für die Region Asien-Pazifik ist. Zudem gibt es die ARIN (American Registry for Internet Numbers), die für Nordamerika zuständig ist. Die LACNIC (Latin-American and Caribbean Network Information Centre) Vergabestelle ist für Lateinamerika und Karibik verantwortlich und zuletzt das RIPE NCC (Réseaux IP Européens Network Coordination Centre), welches für Europa, den Nahen Osten und Zentralasien zuständig ist.
+
+\section*{IP-Routing}
+\addcontentsline{toc}{section}{IP-Routing} 
+
+Das Internetprotokoll (IP) ist routingfähig. Damit werden Datenpakete an Hosts gesendet. Wenn diese nicht im selben Subnetz sind, werden diese über einen Router zum entsprechenden Subnetz transportiert und weitergeleitet. Der Vorgang, wie das Internetprotokoll die Datenpakete vom Sender zum Empfänger schickt, wird als Routing bezeichnet. Dabei sind alle verfügbaren Routen in einer Routing-Tabelle gespeichert. Aus dieser wird dann bestimmt in welches Netz das Datenpaket weitergeleitet wird. Da Broadcasts ein Netzwerk belasten, versuchen die Router die Weiterleitung eines solchen zu verhindern. Jedoch nur dann,  wenn sie selbst nicht darauf angewiesen sind aufgrund der Routing-Tabellen.
+
+\section*{IP-Routing-Algorithmus}
+\addcontentsline{toc}{section}{IP-Routing-Algorithmus} 
+
+Der IP-Routing-Algorithmus gilt nicht nur für IP-Router, sondern für alle Host, die IP-Datenpakete empfangen können. Die empfangenen Datenpakete durchlaufen diesen Algorithmus bis das Datenpaket zugeordnet oder weitergeleitet werden kann.
+
+Die empfangenen Datenpakete durchlaufen diesen Algorithmus bis das Datenpaket zugeordnet oder weitergeleitet werden kann.
+An erster Stelle des Routing-Algorithmus steht die Frage "Ist das Datenpaket für mich?". Wenn die Ziel-Adresse des Datenpakets mit der eigenen IP-Adresse übereinstimmt, dann hat das Datenpaket sein Ziel erreicht und kann verarbeitet werden.
+Wenn die Adresse nicht übereinstimmt, dann wird die zweite Frage gestellt: "Ist das Datenpaket für mein Subnetz?". Dabei wird die Zieladresse mit der Subnetzmaske maskiert. Anhand des verbleibenden Adressanteils wird festgestellt, ob das Datenpaket in den eigenen Netzabschnitt (Subnetz oder Subnet) gehört.
+Stimmt auch das Subnetz nicht, wird die dritte Frage gestellt: "Ist mir die Route zum Empfänger des Datenpakets bekannt?". Manchmal wissen die Hosts die Route für bestimmte IP-Adressen. Wenn die Route bekannt ist, wird das Datenpaket über diese Route weitergeleitet.
+Ist die Route nicht bekannt wird die vierte Frage gestellt: "Ist mir ein Standard-Gateway bekannt, wohin ich das Datenpaket weiterleiten kann?". Das Standard-Gateway ist in der Regel ein Router, der eingehende Datenpakete anhand der Zieladresse und einigen Regeln an seine Routing-Ausgänge verteilt. Ist kein Standard-Gateway vorhanden führt das zu einer Fehlermeldung. Das Datenpaket wird verworfen.
+
+
+\section*{ICMP}
+\addcontentsline{toc}{section}{ICMP} 
+
+\section*{ICMP-Grundsätze}
+\addcontentsline{toc}{section}{ICMP-Grundsätze} 
+
+\section*{Traceroute}
+\addcontentsline{toc}{section}{Traceroute}
+
+\section*{Domain Name System}
+\addcontentsline{toc}{section}{Domain Name System}
+
+\section*{Domain Namensraum}
+\addcontentsline{toc}{section}{Domain Namensraum}
+
+\section*{Domain Name Server}
+\addcontentsline{toc}{section}{Domain Name Server} 
+
+\section*{Auflösung eines DNS Requests}
+\addcontentsline{toc}{section}{Auflösung eines DNS Requests} 
+
+\section*{DNS-Angriffe}
+\addcontentsline{toc}{section}{DNS-Angriffe}
+
+\listoffigures
+%\backmatter 
+
+\section*{Literaturverzeichnis und Quellenverzeichnis}
+\addcontentsline{toc}{section}{Literaturverzeichnis und Quellenverzeichnis}
+\textbf{{\LARGE Internetquellen:}}\\
+\url{http://www.itwissen.info/IP-Multicast-IP-multicast.html}\\
+\url{http://ip-klaeden.selfhost.eu/netz/iuk99/kap1a/ipfrag.htm} \\
+\url{https://www.elektronik-kompendium.de/sites/net/0901141.htm} \\
+\url{http://openbook.rheinwerk-verlag.de/c\_von\_a\_bis\_z/025\_c\_netzwerkprogrammierung\_001.htm\#mja8101c6e0e4cb2e6fd8312114dad30d7} \\
+\url{http://www.itwissen.info/} \\
+\url{https://de.wikipedia.org/wiki/Paketvermittlung} \\
+\url{https://de.wikipedia.org/wiki/Internet\_Protocol }\\
+\url{https://www.elektronik-kompendium.de/sites/net/2011211.htm} \\
+\url{http://www.itwissen.info/IPv4-Internet-protocol-version-4-IPv4-Protokoll.html} \\
+\url{http://www.itwissen.info/IPv6-Internet-protocol-version-6-IPv6-Protokoll.html} \\
+\url{http://www.webschmoeker.de/grundlagen/internet-protocol/\#was\_bedeuten\_die\_einzelnen\_felder\_des\_ip-headers} \\
+\url{http://www.informatik.uni-hamburg.de/TKRN/world/lernmodule/LMint/Popup/IP.htm} \\
+\url{http://einstein.informatik.uni-oldenburg.de/rechnernetze/diagramm.htm} \\
+\url{http://www.cip.ifi.lmu.de/\~leinfeld/tcpip/node9.html} \\
+\url{http://www.linux-praxis.de/linux2/datagram.html} \\
+\url{https://www.tecchannel.de/a/grundlagen-zu-routing-und-subnetzbildung,434734,9} \\
+\url{https://de.wikipedia.org/wiki/IP-Paket}\\ \\ \\
+
+\textbf{{\LARGE Bildquellen:}}\\
+\url{http://www.dslundfestnetz.net/images/Fotolia\_76722255\_XS.jpg} \\
+\url{http://www.techweekeurope.co.uk/wp-content/uploads/2012/09/shutterstock\_98826353.jpg} \\
+DKR-Skript/5.2 Vermittlungstechniken - Screenshot \\
+\url{https://en.wikipedia.org/wiki/Broadcasting\_(networking)} \\
+\url{https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Multicast.svg/1200px-Multicast.svg.png}\\ 
+\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/DSLite.svg/939px-DSLite.svg.png} \\ 
+\url{https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Regional\_Internet\_Registries\_world\_map.svg/940px-Regional\_Internet\_Registries\_world\_map.svg.png} \\
+\url{http://www.itwissen.info/lex-images/tos-feld-im-ip-header.png} \\
+\url{http://www.itwissen.info/lex-images/bitkombinationen-fuer-das-tos-datenfeld.png} \\
+\url{http://www.freesoft.org/CIE/RFC/791/ipflags.gif} \\
+\url{http://www.itwissen.info/lex-images/protokollnummern-fuer-das-protokolltyp-feld.png} \\
+\url{http://ip-klaeden.selfhost.eu/netz/iuk99/kap1a/b\_frag.gif}  \\
+\url{http://www.itwissen.info/lex-images/hierarchie-der-dns-adresse.png} \\
+\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dns-abfrage.svg/568px-Dns-abfrage.svg.png} \\
+\url{https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/IP\_spoofing\_en.svg/220px-IP\_spoofing\_en.svg.png} \\
+
+\end{document}
