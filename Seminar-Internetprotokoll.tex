@@ -90,19 +90,19 @@ Im Rahmen des Seminars "Das Internet: Architektur und Anwendungen " geht es daru
 Aufbauend auf der Definition der IP-Adresse werden vertieft in die Themen der IP-Adressierung, der Aufbau und Vergleich von IPv4 und IPv6 .... Eingegangen.\\
 Dies ist ein kleiner Einblick in das Thema und wird in den nächsten Kapiteln ausgearbeitet.
 
-\section*{IP-Adressierung -Allgemein}
+\newpage \section*{IP-Adressierung -Allgemein}
 \addcontentsline{toc}{section}{IP-Adressierung -Allgemein} 
 Die IP-Adresse ist eine Adresse in Netzwerken, die auf dem Internetprotokoll aufbaut. Jedes Gerät, dass an einem Netz gebunden ist, bekommt eine IP-Adresse zugewiesen. Somit sind die Geräte eindeutig gekennzeichnet und identifizierbar. Einem Rechner können eine oder mehrere IP-Adressen zugeordnet werden. Die IP-Adresse dient dazu, dass Daten vom Absender zum Empfänger versendet werden. Der Transport der Daten ist übertragbar mit der Postanschrift eines Briefumschlages. Die Datenpakete sind mit einer IP-Adresse gekennzeichnet, sodass der Empfänger eindeutig identifiziert wird. Anhand der IP-Adresse leiten die Router die Datenpakete in die entsprechenden Subnetze und werden dort weiter transportiert. Eine IP-Adresse ist nicht verbindlich einem Empfänger zuzuordnen, sondern kann auch ein gesamtes Netz kennzeichnen. Beispiele hierfür sind Broadcast oder Multicast. Unter einem Broadcast versteht man eine Nachricht, die von einem Rechner ausgelöst wird. Dabei werden die Datenpakete an alle Rechner im selben Netz verschickt und auf keinen Fall über einen Router zu jeweils anderen Subnetzen weitergeleitet. Ein Broadcast wird in der Vermittlungstechnik einer Mehrpunktverbindung zugeordnet. Wichtiger Hinweis hierbei ist, dass IPv6 keine Broadcasts mehr unterstützt. Stattdessen wird Multicasts verwendet. Bei einem Multicast handelt es sich ebenso um eine Mehrpunktverbindung. Die Nachricht wird von einem Punkt zu einer beliebigen Gruppe versendet. Der Unterschied zum Broadcast ist, dass es bei einem Multicast notwendig ist, sich vorerst beim Sender anzumelden. Beim Broadcast hingegen werden die Inhalte an alle Teilnehmer im Netz gesendet. 
 
 \begin{figure}[H]
-\begin{subfigure}{0.4\textwidth}
+\begin{subfigure}{0.6\textwidth}
 
-\includegraphics[width=0.4\textwidth]{bilder/b1.png}
+\includegraphics[width=0.6\textwidth]{bilder/b1.png}
 \subcaption{Subfigure Bild Nr. 1}
 
 \end{subfigure}
-\begin{subfigure}{0.4\textwidth}
-\includegraphics[width=0.4\textwidth]{bilder/b2.png}
+\begin{subfigure}{0.6\textwidth}
+\includegraphics[width=0.6\textwidth]{bilder/b2.png}
 \subcaption{Subfigure Bild Nr. 2}
 \end{subfigure}
 \caption[Abbildung 1: Broadcast und Multicast]{Broadcast und Multicast}
@@ -218,17 +218,47 @@ Das Internetprotokoll (IP) ist routingfähig. Damit werden Datenpakete an Hosts g
 \addcontentsline{toc}{section}{IP-Routing-Algorithmus} 
 
 Alle Datenpakete, die empfangen werden, durchlaufen einen Routing-Algoritmus. Dieser gewährleistet, dass die Datenpakete zugeordnet und zum Ziel-Empfänger weitergeleitet werden. \\
-An erster Stelle des Routing-Algorithmus steht die Frage \dq Ist das Datenpaket für mich?\dq . Wenn die Ziel-Adresse des Datenpakets mit der eigenen IP-Adresse übereinstimmt, dann hat das Datenpaket sein Ziel erreicht und kann verarbeitet werden. 
-Wenn die Adresse nicht übereinstimmt, dann wird die zweite Frage gestellt: "Ist das Datenpaket für mein Subnetz?". Dabei wird die Zieladresse mit der Subnetzmaske maskiert. Anhand des verbleibenden Adressanteils wird festgestellt, ob das Datenpaket in den eigenen Netzabschnitt (Subnetz oder Subnet) gehört.
-Stimmt auch das Subnetz nicht, wird die dritte Frage gestellt: "Ist mir die Route zum Empfänger des Datenpakets bekannt?". Manchmal wissen die Hosts die Route für bestimmte IP-Adressen. Wenn die Route bekannt ist, wird das Datenpaket über diese Route weitergeleitet.
-Ist die Route nicht bekannt wird die vierte Frage gestellt: "Ist mir ein Standard-Gateway bekannt, wohin ich das Datenpaket weiterleiten kann?". Das Standard-Gateway ist in der Regel ein Router, der eingehende Datenpakete anhand der Zieladresse und einigen Regeln an seine Routing-Ausgänge verteilt. Ist kein Standard-Gateway vorhanden führt das zu einer Fehlermeldung. Das Datenpaket wird verworfen.
+Die Abbildung 7 zeigt, wie der Routing-Algorithmus abläuft. Im Algorithmus geht es die ganze Zeit um das Datenpaket. Zunächst wird geprüft, ob das Datenpaket für einen selbst ist. Dabei wird die Ziel-Adresse des Datenpakets mit der eigenen IP-Adresse verglichen. Wenn diese übereinstimmt, kann mit der Verarbeitung begonnen werden. Andernfalls wird geprüft, ob das Datenpaket im selben Subnetz bleiben soll. Ist dies der Fall, wird das Datenpaket weitergeleitet. Ist dem nicht so, wird geprüft, ob die entsprechende Route bekannt ist. Ist die Route bekannt, wird weitergeleitet, ansonsten muss geprüft werden, ob ein Standartgateway vorhanden ist, der das Datenpaket weiterleiten kann. In der Regel schaut man hier in die Routing-Tabelle und leitet das Datenpaket gegebenfalls weiter. Wenn kein Standartgateway vorhanden ist, kommt es zu einer Fehlermeldung und das Datenpaket wird entsprechend verworfen.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b8.png}
+\end{center}
+\caption[Abbildung 7: IP-Routing-Algorithmus]{IP-Routing-Algorithmus}
+\end{figure}
 
 
 \section*{ICMP}
 \addcontentsline{toc}{section}{ICMP} 
+Das sogenannte Internet Control Message Protocol (ICMP) ist ein Bestandteil der IPv4 Adresse. Jedoch wird dies als ein eigenes Protokoll verwendet. Jeder Router, als auch jeder Rechner sind in der Lage mit dem ICMP Protokoll zu kommunizieren. Dieser ist für den Austausch von Informations- und Fehlermeldungen über das Internet-Protokoll in der Version 4 (IPv4) zuständig. Für IPv6 existiert ein ähnliches Protokoll mit dem Namen ICMPv6.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b9.png}
+\end{center}
+\caption[Abbildung 8: ICMP]{ICMP}
+\end{figure}
+Der Abbildung 8 ist zu entnehmen, dass die ICMP-Pakete vom Router (R1) zur Quelle (Host A) zurückgeschickt werden, sobald der Router Pakete verwirft. Dies geschieht genau dann, wenn das Ziel (Host B) nicht erreichbar ist oder die TTL (Time to live) abgelaufen ist. Die ICMP-Pakete enthalten in der Regel Informationen über das IPv4-Protokoll.
 
 \section*{ICMP-Grundsätze}
 \addcontentsline{toc}{section}{ICMP-Grundsätze} 
+
+ICMP benutzt IP als Kommunikationsbasis \\
+ICMP-Nachrichten werden in IP-Paketen gekapselt \\
+ICMP erkennt Fehlerzustände \\
+ICMP analysiert Fehler in jedem IP-Paket \\
+Ausnahme: Datenpakete, die eine ICMP-Nachricht enthalten \\
+ICMP-Nachrichten werden nicht als Antwort auf Pakete an Zieladressen  versendet, bei denen es sich um Multicast- oder Broadcast-Adressen handelt.\\
+ICMP-Nachrichten antworten nur einer eindeutigen Quell-IP-Adresse. \\
+Der Typ des ICMP-Pakets ist eine 8-Bit-Zahl am Anfang des ICMP-Headers\\
+
+ICMP benutzt IP als Kommunikationsbasis, indem es sich selbst als Protokoll einer höheren Schicht interpretiert, d. h. ICMP-Nachrichten werden in IP-Paketen gekapselt. \\
+ICMP erkennt einige Fehlerzustände, macht aber IP zu keinem zuverlässigen Protokoll. \\
+ICMP analysiert Fehler in jedem IP-Paket, mit Ausnahme solcher, die eine ICMP-Nachricht tragen. \\
+ICMP-Nachrichten werden nicht als Antwort auf Pakete an Zieladressen versendet, bei denen es sich um Multicast- oder Broadcast-Adressen handelt. \\
+ICMP-Nachrichten antworten nur einer eindeutigen Quell-IP-Adresse. \\
+Der Typ des ICMP-Pakets steht als 8-Bit-Zahl am Anfang des ICMP-Headers. 
+
 
 \section*{Traceroute}
 \addcontentsline{toc}{section}{Traceroute}
