@@ -1,9 +1,23 @@
 \select@language {ngerman}
-\contentsline {figure}{\numberline {1}{\ignorespaces Abbildung 1: Broadcast und Multicast}}{5}{figure.caption.5}
-\contentsline {figure}{\numberline {2}{\ignorespaces Abbildung 2: Beispiel mit einem Klienten und Webserver f\"ur den Verwendungszweck der IP-Adressierung}}{6}{figure.caption.7}
-\contentsline {figure}{\numberline {3}{\ignorespaces Abbildung 3: Aufteilung in Netzklassen}}{7}{figure.caption.10}
-\contentsline {figure}{\numberline {4}{\ignorespaces Abbildung 4: IPv6-Aufteilung der Adresse}}{9}{figure.caption.15}
-\contentsline {figure}{\numberline {5}{\ignorespaces Abbildung 5: Dual Stack}}{10}{figure.caption.17}
-\contentsline {figure}{\numberline {6}{\ignorespaces Abbildung 6: Vergabe von IP-Adressen}}{12}{figure.caption.21}
-\contentsline {figure}{\numberline {7}{\ignorespaces Abbildung 7: IP-Routing-Algorithmus}}{14}{figure.caption.24}
-\contentsline {figure}{\numberline {8}{\ignorespaces Abbildung 8: ICMP}}{15}{figure.caption.26}
+\contentsline {figure}{\numberline {1}{\ignorespaces Abbildung 1: Schichtenmodell}}{1}{figure.caption.6}
+\contentsline {figure}{\numberline {2}{\ignorespaces Abbildung 2: Vermittlungstechnik}}{2}{figure.caption.8}
+\contentsline {figure}{\numberline {3}{\ignorespaces Abbildung 3: Broadcast und Multicast}}{3}{figure.caption.10}
+\contentsline {figure}{\numberline {4}{\ignorespaces Abbildung 4: Beispiel mit einem Klienten und Webserver f\"ur den Verwendungszweck der IP-Adressierung}}{3}{figure.caption.12}
+\contentsline {figure}{\numberline {5}{\ignorespaces Abbildung 5: Aufteilung in Netzklassen}}{5}{figure.caption.15}
+\contentsline {figure}{\numberline {6}{\ignorespaces Abbildung 6: IPv6-Aufteilung der Adresse}}{7}{figure.caption.20}
+\contentsline {figure}{\numberline {7}{\ignorespaces Abbildung 7: Dual Stack}}{7}{figure.caption.22}
+\contentsline {figure}{\numberline {8}{\ignorespaces Abbildung 8: Vergabe von IP-Adressen}}{10}{figure.caption.26}
+\contentsline {figure}{\numberline {9}{\ignorespaces Abbildung 9: IP-Routing-Algorithmus}}{12}{figure.caption.29}
+\contentsline {figure}{\numberline {10}{\ignorespaces Abbildung 10: IP-Header}}{13}{figure.caption.34}
+\contentsline {figure}{\numberline {11}{\ignorespaces Abbildung 11: TOS}}{14}{figure.caption.38}
+\contentsline {figure}{\numberline {12}{\ignorespaces Abbildung 12: Flags}}{15}{figure.caption.43}
+\contentsline {figure}{\numberline {13}{\ignorespaces Abbildung 13: Protocol}}{16}{figure.caption.47}
+\contentsline {figure}{\numberline {14}{\ignorespaces Abbildung 14: IPv6-Header}}{17}{figure.caption.53}
+\contentsline {figure}{\numberline {15}{\ignorespaces Abbildung 15: Fragmentierung}}{18}{figure.caption.55}
+\contentsline {figure}{\numberline {16}{\ignorespaces Abbildung 16: ICMP}}{19}{figure.caption.57}
+\contentsline {figure}{\numberline {17}{\ignorespaces Abbildung 17: Traceroute}}{20}{figure.caption.60}
+\contentsline {figure}{\numberline {18}{\ignorespaces Abbildung 18: Domain Namensraum}}{22}{figure.caption.63}
+\contentsline {figure}{\numberline {19}{\ignorespaces Abbildung 19: Domain Name Server}}{23}{figure.caption.65}
+\contentsline {figure}{\numberline {20}{\ignorespaces Abbildung 20: Aufl\"osung eines DNS Requests}}{24}{figure.caption.67}
+\contentsline {figure}{\numberline {21}{\ignorespaces Abbildung 21: DNS Amplification}}{26}{figure.caption.71}
+\contentsline {figure}{\numberline {22}{\ignorespaces Abbildung 22: Spoofing/Phishing}}{26}{figure.caption.73}

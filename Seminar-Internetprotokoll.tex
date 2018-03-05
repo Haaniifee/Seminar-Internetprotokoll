@@ -59,6 +59,7 @@ germandbls={ß},
 \vspace*{2.0cm}\\
 {\LARGE \textbf{IP - Das Internetprotokoll}}
 \vspace*{2.0cm}\\
+\textbf{Leitung: Dr. Klaus-Dieter Heidtmann}\\ 
 vorgelegt von
 \vspace*{0.4cm}\\
 %\textbf{Fulya Cankaya:} fulya-cankaya@hotmail.de (6809050) \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de (6816065) \\ 
@@ -69,7 +70,6 @@ vorgelegt von
 MIN-Fakultät \vspace*{0.4cm} \\ 
 Fachbereich Informatik \\
 Seminar Das Internet: Architektur und Anwendungen\\
-Leitung: Dr. Klaus-Dieter Heidtmann \\
 Abgabedatum: 30.03.2018
 
 
@@ -77,20 +77,50 @@ Abgabedatum: 30.03.2018
 \end{titlepage}
 
 \restoregeometry
-
+\pagenumbering{roman}
 \tableofcontents
 
 \section*{Abkürzungsverzeichnis}
 \addcontentsline{toc}{section}{Abkürzungsverzeichnis} 
 %\mainmatter 
+
+\listoffigures
+
 \newpage \section*{Einleitung}
 \addcontentsline{toc}{section}{Einleitung} 
+\pagenumbering{arabic}
 
 Im Rahmen des Seminars "Das Internet: Architektur und Anwendungen " geht es darum, den Grundaufbau und wichtige Anwendungen des Internets zu verstehen. Diese Hausarbeit orientiert sich speziell am Thema "Das Internetprotokoll". 
 Aufbauend auf der Definition der IP-Adresse werden vertieft in die Themen der IP-Adressierung, der Aufbau und Vergleich von IPv4 und IPv6 .... Eingegangen.\\
 Dies ist ein kleiner Einblick in das Thema und wird in den nächsten Kapiteln ausgearbeitet.
 
-\newpage \section*{IP-Adressierung -Allgemein}
+\section*{Internetprotokoll (IP) - Einordnung Schichtenmodell }
+\addcontentsline{toc}{section}{Internetprotokoll (IP) - Einordnung Schichtenmodell } 
+
+\begin{figure}[H]
+\begin{subfigure}{0.6\textwidth}
+
+\includegraphics[width=0.6\textwidth]{bilder/b15.png}
+\subcaption{Internet Protocol}
+
+\end{subfigure}
+\begin{subfigure}{0.6\textwidth}
+\includegraphics[width=0.8\textwidth]{bilder/b16.png}
+\subcaption{DoD\&OSI-Schichtenmodell}
+\end{subfigure}
+\caption[Abbildung 1: Schichtenmodell]{Schichtenmodell}
+\end{figure}
+
+\section*{Internetprotokoll (IP) - Einordnung Vermittlungstechnik }
+\addcontentsline{toc}{section}{Internetprotokoll (IP) - Einordnung Vermittlungstechnik } 
+
+\begin{figure}[H]
+\includegraphics[width=1.2\textwidth]{bilder/b17.png}
+\caption[Abbildung 2: Vermittlungstechnik]{Vermittlungstechnik}
+\end{figure}
+
+
+\section*{IP-Adressierung -Allgemein}
 \addcontentsline{toc}{section}{IP-Adressierung -Allgemein} 
 Die IP-Adresse ist eine Adresse in Netzwerken, die auf dem Internetprotokoll aufbaut. Jedes Gerät, dass an einem Netz gebunden ist, bekommt eine IP-Adresse zugewiesen. Somit sind die Geräte eindeutig gekennzeichnet und identifizierbar. Einem Rechner können eine oder mehrere IP-Adressen zugeordnet werden. Die IP-Adresse dient dazu, dass Daten vom Absender zum Empfänger versendet werden. Der Transport der Daten ist übertragbar mit der Postanschrift eines Briefumschlages. Die Datenpakete sind mit einer IP-Adresse gekennzeichnet, sodass der Empfänger eindeutig identifiziert wird. Anhand der IP-Adresse leiten die Router die Datenpakete in die entsprechenden Subnetze und werden dort weiter transportiert. Eine IP-Adresse ist nicht verbindlich einem Empfänger zuzuordnen, sondern kann auch ein gesamtes Netz kennzeichnen. Beispiele hierfür sind Broadcast oder Multicast. Unter einem Broadcast versteht man eine Nachricht, die von einem Rechner ausgelöst wird. Dabei werden die Datenpakete an alle Rechner im selben Netz verschickt und auf keinen Fall über einen Router zu jeweils anderen Subnetzen weitergeleitet. Ein Broadcast wird in der Vermittlungstechnik einer Mehrpunktverbindung zugeordnet. Wichtiger Hinweis hierbei ist, dass IPv6 keine Broadcasts mehr unterstützt. Stattdessen wird Multicasts verwendet. Bei einem Multicast handelt es sich ebenso um eine Mehrpunktverbindung. Die Nachricht wird von einem Punkt zu einer beliebigen Gruppe versendet. Der Unterschied zum Broadcast ist, dass es bei einem Multicast notwendig ist, sich vorerst beim Sender anzumelden. Beim Broadcast hingegen werden die Inhalte an alle Teilnehmer im Netz gesendet. 
 
@@ -98,16 +128,15 @@ Die IP-Adresse ist eine Adresse in Netzwerken, die auf dem Internetprotokoll auf
 \begin{subfigure}{0.6\textwidth}
 
 \includegraphics[width=0.6\textwidth]{bilder/b1.png}
-\subcaption{Subfigure Bild Nr. 1}
+\subcaption{Broadcast}
 
 \end{subfigure}
 \begin{subfigure}{0.6\textwidth}
 \includegraphics[width=0.6\textwidth]{bilder/b2.png}
-\subcaption{Subfigure Bild Nr. 2}
+\subcaption{Multicast}
 \end{subfigure}
-\caption[Abbildung 1: Broadcast und Multicast]{Broadcast und Multicast}
+\caption[Abbildung 3: Broadcast und Multicast]{Broadcast und Multicast}
 \end{figure}
-
 
 \section*{IP-Adressierung-Verwendungszweck}
 \addcontentsline{toc}{section}{IP-Adressierung-Verwendungszweck} 
@@ -117,7 +146,7 @@ Die Hauptaufgabe der IP-Adressierung besteht im Transport der Daten. Dabei werde
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b3.png}
 \end{center}
-\caption[Abbildung 2: Beispiel mit einem Klienten und Webserver für den Verwendungszweck der IP-Adressierung]{Beispiel mit einem Klienten und Webserver für den Verwendungszweck der IP-Adressierung}
+\caption[Abbildung 4: Beispiel mit einem Klienten und Webserver für den Verwendungszweck der IP-Adressierung]{Beispiel mit einem Klienten und Webserver für den Verwendungszweck der IP-Adressierung}
 \end{figure}
 
 Beispielsweise ist ein Webserver von einem Webbrowser über die IP-Adresse erreichbar. So kann eine Kommunikation untereinander erfolgen. Dazu muss der Webbrowser bei einem Nameserver nach der zugehörigen IP-Adresse des Webservers anfragen, die einer Domain angehört. Dabei wird die URL zu einer IP-Adresse umgeformt mittels der Namensauflösung, welches im Kapitel Domain Namensraum behandelt wird. Diese IP-Adresse wird verwendet, um Daten an den Webserver zu senden.
@@ -140,7 +169,7 @@ Bei der Klasse C ist die Subnetzmaske 255.255.255.0 und somit werden 24 Bits für
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b4.png}
 \end{center}
-\caption[Abbildung 3: Aufteilung in Netzklassen]{Aufteilung in Netzklassen}
+\caption[Abbildung 5: Aufteilung in Netzklassen]{Aufteilung in Netzklassen}
 \end{figure}
 
 Netzklassen werden in der Praxis kaum verwendet. Aufgrund der Netzklassen wurden die meisten zur Verfügung stehenden öffentlichen IP-Adressen vergeben. Die Größe eines Netzwerkes wird anhand der Angabe der Subnetzmaske bestimmt und nicht aus der IP-Adresse und der Netzklasse.
@@ -167,7 +196,7 @@ Die ersten 32 Bits der IPv6 Adresse bekommt der Internetprovider von der Regiona
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b5.png}
 \end{center}
-\caption[Abbildung 4: IPv6-Aufteilung der Adresse]{IPv6-Aufteilung der Adresse}
+\caption[Abbildung 6: IPv6-Aufteilung der Adresse]{IPv6-Aufteilung der Adresse}
 \end{figure}
 
 \section*{Dual Stack}
@@ -177,7 +206,7 @@ Die ersten 32 Bits der IPv6 Adresse bekommt der Internetprovider von der Regiona
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b6.png}
 \end{center}
-\caption[Abbildung 5: Dual Stack]{Dual Stack}
+\caption[Abbildung 7: Dual Stack]{Dual Stack}
 \end{figure}
 
 Zurzeit besteht ein geringer Bestand an IPv4 Adressen. Wenn diese aufgebraucht sind, ist es notwendig auf IPv6 zurückzugreifen. Somit kann es zu einem Wechsel kommen, wenn der bestehende Adressbereich nicht effizient genutzt wird. Die Kunst hierbei ist, dass einerseits nicht nur die Einführung von IPv6 in Vordergrund steht, sondern gleichzeitig auch, dass IPv4 zur selben Zeit betrieben wird. Diesen Zustand bezeichnet man als "Dual Stack". Anhand der Abbildung wird im Folgenden auf die Funktionsweise eingegangen. \\
@@ -204,7 +233,7 @@ Zuständig für die Vergabe von IP-Adressen ist der IANA .Die IANA vergibt gesamte
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b7.png}
 \end{center}
-\caption[Abbildung 6: Vergabe von IP-Adressen]{Vergabe von IP-Adressen}
+\caption[Abbildung 8: Vergabe von IP-Adressen]{Vergabe von IP-Adressen}
 \end{figure}
 
 Es gibt seit Februar 2005 insgesamt fünf regionale Vergabestellen, welche man als Regional Internet Registries (RIR) bezeichnet. Dazu gehören AfriNIC (African Network Information Centre). Diese ist zuständig für die Adressvergabe in Afrika. Hinzu kommt die APNIC (Asia Pacific Network Information Centre), welches zuständig für die Region Asien-Pazifik ist. Zudem gibt es die ARIN (American Registry for Internet Numbers), die für Nordamerika zuständig ist. Die LACNIC (Latin-American and Caribbean Network Information Centre) Vergabestelle ist für Lateinamerika und Karibik verantwortlich und zuletzt das RIPE NCC (Réseaux IP Européens Network Coordination Centre), welches für Europa, den Nahen Osten und Zentralasien zuständig ist.
@@ -224,11 +253,121 @@ Die Abbildung 7 zeigt, wie der Routing-Algorithmus abläuft. Im Algorithmus geht 
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b8.png}
 \end{center}
-\caption[Abbildung 7: IP-Routing-Algorithmus]{IP-Routing-Algorithmus}
+\caption[Abbildung 9: IP-Routing-Algorithmus]{IP-Routing-Algorithmus}
+\end{figure}
+
+\section*{IP-Paket}
+\addcontentsline{toc}{section}{IP-Paket} 
+
+\subsection*{Datagramm}
+\addcontentsline{toc}{subsection}{Datagramm}
+
+
+\subsection*{Aufbau}
+\addcontentsline{toc}{subsection}{Aufbau}
+
+
+\subsection*{IP-Header}
+\addcontentsline{toc}{subsection}{IP-Header}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b19.png}
+\end{center}
+\caption[Abbildung 10: IP-Header]{IP-Header}
+\end{figure}
+
+\subsubsection*{Version}
+\addcontentsline{toc}{subsubsection}{Version}
+
+\subsubsection*{IHL}
+\addcontentsline{toc}{subsubsection}{IHL}
+
+\subsubsection*{TOS}
+\addcontentsline{toc}{subsubsection}{TOS}
+
+\begin{figure}[H]
+\begin{subfigure}{0.6\textwidth}
+
+\includegraphics[width=0.8\textwidth]{bilder/b20.png}
+\subcaption{Vorrang-Steuerung}
+\end{subfigure}
+\begin{subfigure}{0.6\textwidth}
+\includegraphics[width=0.8\textwidth]{bilder/b21.png}
+\subcaption{TOS-Bit}
+\end{subfigure}
+\caption[Abbildung 11: TOS]{TOS}
+\end{figure}
+
+\subsubsection*{DiffServ}
+\addcontentsline{toc}{subsubsection}{DiffServ}
+
+\subsubsection*{Total Length}
+\addcontentsline{toc}{subsubsection}{Total Length}
+
+\subsubsection*{Identification}
+\addcontentsline{toc}{subsubsection}{Identification}
+
+\subsubsection*{Flags}
+\addcontentsline{toc}{subsubsection}{Flags}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/b22.png}
+\end{center}
+\caption[Abbildung 12: Flags]{Flags}
+\end{figure}
+
+\subsubsection*{Fragment Offset}
+\addcontentsline{toc}{subsubsection}{Fragment Offset}
+
+\subsubsection*{TTL}
+\addcontentsline{toc}{subsubsection}{TTL}
+
+\subsubsection*{Protocol}
+\addcontentsline{toc}{subsubsection}{Protocol}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b23.png}
+\end{center}
+\caption[Abbildung 13: Protocol]{Protocol}
 \end{figure}
 
 
-\section*{ICMP}
+\subsubsection*{Header Checksum}
+\addcontentsline{toc}{subsubsection}{Header Checksum}
+
+\subsubsection*{Source Adress}
+\addcontentsline{toc}{subsubsection}{Source Adress}
+
+\subsubsection*{Destination Adress}
+\addcontentsline{toc}{subsubsection}{Destination Adress}
+
+\subsubsection*{Options and Padding}
+\addcontentsline{toc}{subsubsection}{Options and Padding}
+
+\section*{IPv6-Header im Vergleich zu IPv4}
+\addcontentsline{toc}{section}{IPv6-Header im Vergleich zu IPv4} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b24.png}
+\end{center}
+\caption[Abbildung 14: IPv6-Header]{IPv6-Header}
+\end{figure}
+
+\newpage \section*{Fragmentierung/Defragmentierung}
+\addcontentsline{toc}{section}{Fragmentierung/Defragmentierung} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b18.png}
+\end{center}
+\caption[Abbildung 15: Fragmentierung]{Fragmentierung}
+\end{figure}
+
+\newpage  \section*{ICMP}
 \addcontentsline{toc}{section}{ICMP} 
 Das sogenannte Internet Control Message Protocol (ICMP) ist ein Bestandteil der IPv4 Adresse. Jedoch wird dies als ein eigenes Protokoll verwendet. Jeder Router, als auch jeder Rechner sind in der Lage mit dem ICMP Protokoll zu kommunizieren. Dieser ist für den Austausch von Informations- und Fehlermeldungen über das Internet-Protokoll in der Version 4 (IPv4) zuständig. Für IPv6 existiert ein ähnliches Protokoll mit dem Namen ICMPv6.
 
@@ -236,52 +375,109 @@ Das sogenannte Internet Control Message Protocol (ICMP) ist ein Bestandteil der 
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/b9.png}
 \end{center}
-\caption[Abbildung 8: ICMP]{ICMP}
+\caption[Abbildung 16: ICMP]{ICMP}
 \end{figure}
-Der Abbildung 8 ist zu entnehmen, dass die ICMP-Pakete vom Router (R1) zur Quelle (Host A) zurückgeschickt werden, sobald der Router Pakete verwirft. Dies geschieht genau dann, wenn das Ziel (Host B) nicht erreichbar ist oder die TTL (Time to live) abgelaufen ist. Die ICMP-Pakete enthalten in der Regel Informationen über das IPv4-Protokoll.
+Der Abbildung ist zu entnehmen, dass die ICMP-Pakete vom Router (R1) zur Quelle (Host A) zurückgeschickt werden, sobald der Router Pakete verwirft. Dies geschieht genau dann, wenn das Ziel (Host B) nicht erreichbar ist oder die TTL (Time to live) abgelaufen ist. Die ICMP-Pakete enthalten in der Regel Informationen über das IPv4-Protokoll.
 
 \section*{ICMP-Grundsätze}
 \addcontentsline{toc}{section}{ICMP-Grundsätze} 
 
-ICMP benutzt IP als Kommunikationsbasis \\
-ICMP-Nachrichten werden in IP-Paketen gekapselt \\
-ICMP erkennt Fehlerzustände \\
-ICMP analysiert Fehler in jedem IP-Paket \\
-Ausnahme: Datenpakete, die eine ICMP-Nachricht enthalten \\
-ICMP-Nachrichten werden nicht als Antwort auf Pakete an Zieladressen  versendet, bei denen es sich um Multicast- oder Broadcast-Adressen handelt.\\
-ICMP-Nachrichten antworten nur einer eindeutigen Quell-IP-Adresse. \\
-Der Typ des ICMP-Pakets ist eine 8-Bit-Zahl am Anfang des ICMP-Headers\\
-
-ICMP benutzt IP als Kommunikationsbasis, indem es sich selbst als Protokoll einer höheren Schicht interpretiert, d. h. ICMP-Nachrichten werden in IP-Paketen gekapselt. \\
-ICMP erkennt einige Fehlerzustände, macht aber IP zu keinem zuverlässigen Protokoll. \\
-ICMP analysiert Fehler in jedem IP-Paket, mit Ausnahme solcher, die eine ICMP-Nachricht tragen. \\
-ICMP-Nachrichten werden nicht als Antwort auf Pakete an Zieladressen versendet, bei denen es sich um Multicast- oder Broadcast-Adressen handelt. \\
-ICMP-Nachrichten antworten nur einer eindeutigen Quell-IP-Adresse. \\
-Der Typ des ICMP-Pakets steht als 8-Bit-Zahl am Anfang des ICMP-Headers. 
-
+Das ICMP Protokoll benutzt das IP-Protokoll, um kommunizieren zu können. Das ICMP Protokoll sieht sich selbst als ein Protokoll einer höheren Schicht. Dies hat zur Folge, dass die ICMP-Nachrichten in den IP-Paketen eingegliedert werden. ICMP kann Fehlerzustände erkennen. Hierfür analysiert das Protokoll Fehler in jedem einzelnen IP-Datenpaket, die keine ICMP-Nachrichten beinhalten. Auf Datenpakete, die von einem Multicast oder Broadcast ausgelöst werden, werden keine ICMP-Nachrichten als Antwort versendet. ICMP Nachrichten antwortem nur Quell-IP-Adressen. Das Paket selbst ist eine 8-Bit Zahl, die sich im ICMP-Header befindet. 
 
 \section*{Traceroute}
 \addcontentsline{toc}{section}{Traceroute}
 
+Unter einem Traceroute versteht man einen Programm, welches die Route und Internet-Knoten bestimmt, die IP-Datenpakete benötigen, um zum Ziel zu gelangen. Ihr Hauptziel ist es, welche Stationen ein Datenpaket einnimmt, um zum Ziel zu gelangen. Man sendet immer wieder IP-Datenpakete an den Ziel Rechner und beginnt mit einer TTL(Time to Live) =1. \\
+Häufige Verwendung des Traceroute besteht darin, das Routing einer bestimmten Verbindung anzuzeigen oder der Auslöser von Verzögerungen zu identifizieren. \\ \\ \textbf{Was passiert bei Traceroute? }
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b10.png}
+\end{center}
+\caption[Abbildung 17: Traceroute]{Traceroute}
+\end{figure}
+
+Traceroute beginnt mit einer TTL von 1. Dabei sendet er fortlaufend IP-Datenpakete an den Ziel-Rechner. Sobald das erste Datenpaket bei einem Router angekommen ist, der dieses weiterleiten soll, wird die TTL um eins runtergezählt. Da der TTL nun 0 ist, wird dieser verworfen. Anschließend wird eine ICMP-Antwort gesendet vom Typ 11. Nämlich Time exceeded mit dem Code 0: Time to live exceeded in transit an den Absender. Das Datenpaket erhält folglich als Quelladresse die IP-Adresse des Routers. Im Anschluss sorgt Traceroute dafür, dass alle Informationen einschließlich der gesamten Übertragungsdauer aufgezeichnet werden. Danach werden alle Schritte wiederholt mit einer TTL, die um eins erhöht wird. Dies sorgt dafür, dass der nächste Router ermittelt wird. Wenn das Maximum an Hops erreicht wird oder der Zielrechner erreicht wird, dann hört die Wiederholung auf. Sobald der Zielrechner erreicht wird, sendet er bei ICMP-basiertem Traceroute die ICMP-Antwort Typ 0 ICMP Echo Reply und bei UDP-basiertem Traceroute Destination Unreachable Code 3 Port Unreachable. \\ \\ \textbf{Anwendung von Trace Route} \\ \\
+Mit Traceroute kann geprüft werden, ob die Datenpakete mit der richtigen Route zum Ziel kommen. Falls dies über einen Umweg läuft, kann daraus schlussgefolgert werden, dass ein Router ausgefallen ist. Zudem kann die Laufzeit zwischen einzelnen Stationen geprüft werden. Falls es dazu kommen sollte, dass ein IP-Paket nicht zum Ziel gelangt, dann kann mit Traceroute die ausgefallene Station ermittelt werden. Wenn mehrere Stationen häufiger vorkommen, könnte die Ursache darin liegen, dass ein Router durch einen fehlerhaften Routing-Eintrag eine Routing-Schleife verursacht.
+
 \section*{Domain Name System}
 \addcontentsline{toc}{section}{Domain Name System}
+Die Hauptaufgabe des Domain Name Systems ist die Beantwortung von Anfragen zur Namensauflösung. DNS wird in vielen IP-basierten Netzwerken verwendet.
+Jeder Nutzer sendet als Anfrage den Domainnamen übers Internet. Dieser wird vom DNS in die dazugehörige IP-Adresse umgewandelt und kann so einem Rechner zugeordnet werden.
 
 \section*{Domain Namensraum}
 \addcontentsline{toc}{section}{Domain Namensraum}
 
+Der Domain Namensraum besitzt eine baumartige Struktur. Dabei nennt man die Blätter und Knoten des Baumes Labels. Will man den kompletten Domainnamen erhalten, so müssen alle Labels desselben Pfades miteinander verkettet werden. Innerhalb einer Domäne kennen die Name-Server nur die Domain-Adressen der direkt höheren oder unteren Nameserver. Zudem bekommt jede Ebene einen eigenen Namen. In Abbildung 10 sind die Domainnamen jeweils mit einem Punkt voneinander getrennt. Die Wurzel repräsentiert immer den DNS-Root.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b11.png}
+\end{center}
+\caption[Abbildung 18: Domain Namensraum]{Domain Namensraum}
+\end{figure}
+
 \section*{Domain Name Server}
 \addcontentsline{toc}{section}{Domain Name Server} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b12.png}
+\end{center}
+\caption[Abbildung 19: Domain Name Server]{Domain Name Server}
+\end{figure}
+
+Jeder DNS-Teilnehmer hat auf seinem eigenen Computer Resolver, die installiert sind. Diese rufen Informationen von Nameservern ab und sind selbst Software-Module. Sie übernehmen die Anfragen der Anwendung und übermitteln diese an einen Nameserver und bilden somit die Schnittstelle. Man unterscheidet zwischen einem rekursiv arbeitenden Resolver und einem iterativ arbeitenden. \\
+Im rekursiven Fall schickt der Resolver eine rekursive Anfrage an einen Nameserver. Dieser schaut im eigenen Datenbestand, ob die benötigten Informationen vorhanden sind. Falls diese nicht vorhanden sind, werden weitere Nameserver kontaktiert. Somit übernehmen die Nameserver die ursprüngliche Aufgabe des Resolvers, da dieser die Anfrage an die Nameserver weiterleitet. \\
+Bei der iterativen Anfrage hingegen bekommt der Resolver entweder den gewünschten Resource Record oder einen Verweis auf weitere Nameserver, die er als nächstes kontaktiert. Dies geschieht solange, bis der Nameserver eine korrekte Antwort bekommt, mit der er arbeiten kann. Der Resolver übergibt die Antwort an ein Programm, welches die Daten angefordert hat. Dies kann zum Beispiel ein Webbrowser sein, der die Anfrage gestellt hat.
 
 \section*{Auflösung eines DNS Requests}
 \addcontentsline{toc}{section}{Auflösung eines DNS Requests} 
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/b25.png}
+\end{center}
+\caption[Abbildung 20: Auflösung eines DNS Requests]{Auflösung eines DNS Requests}
+\end{figure}
+Bei einer Auflösung eines DNS Requests will ein Rechner eine Verbindung zu einer Seite aufbauen. Dafür benötigt er die IP-Adresse. Dies geschieht mittels Namensauflösung. Dafür müssen folgende Schritte durchlaufen werden. Zunächst sucht der Rechner in seiner eigenen Hosts-Datei, ob die gesuchte IP-Adresse der Webseite schon vorhanden ist. Wenn diese nicht vorhanden ist, fragt dieser einen DNS-Server. Der DNS-Server wird entweder per DHCP automatisch zugewiesen oder der Nameserver ist vorher schon eingetragen. Wenn der DNS-Server die IP-Adresse des angefragten Namens zwischengespeichert hat, liefert er diesen und die Anfrage wird beendet. Ansonsten fragt er einen der 13 Root-Nameservern nach der gesuchten IP-Adresse. Der Root-Nameserver findet zunächst die Zone heraus in welcher sich die Auflösung des Namens befindet. Die Zone ist zunächst die Endung des Namens. In der Abbildung ist dies die org-Zone. Anschließend werden die Namen und die zugehörigen IP-Adressen der entsprechenden Nameserver an den DNS-Server zum Ausgangsrechner gesendet. Dort fragt der DNS-Server den entsprechenden Nameserver für den org-Domain nach der Webseite. Der org-Nameserver sendet alle Namen der Nameserver inklusive der IP-Adressen für die entsprechende Zone. Im Anschluss wird nach der zugehörigen IP-Adresse gefragt, mit welcher an den DNS-Server von dem Ausgangsrechner geantwortet wird. Dieser sendet sie an den Ausgangsrechner, welcher nun seine HTTP-Anfragen an die zugehörige IP-Adresse senden kann.
+
 \section*{DNS-Angriffe}
 \addcontentsline{toc}{section}{DNS-Angriffe}
 
-\listoffigures
+\subsection*{Denial of Service (DoS)}
+\addcontentsline{toc}{subsection}{Denial of Service (DoS)}
+
+\subsection*{DNS Amplification}
+\addcontentsline{toc}{subsection}{DNS Amplification}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b13.png}
+\end{center}
+\caption[Abbildung 21: DNS Amplification]{DNS Amplification}
+\end{figure}
+
+\subsection*{Spoofing/Phishing}
+\addcontentsline{toc}{subsection}{Spoofing/Phishing}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/b14.png}
+\end{center}
+\caption[Abbildung 22: Spoofing/Phishing]{Spoofing/Phishing}
+\end{figure}
+
+\subsection*{Cache Poisoning}
+\addcontentsline{toc}{subsection}{Cache Poisoning}
+
+\subsection*{Fast-Flux DNS}
+\addcontentsline{toc}{subsection}{Fast-Flux DNS}
+
+
 %\backmatter 
 
-\section*{Literaturverzeichnis und Quellenverzeichnis}
+\newpage \section*{Literaturverzeichnis und Quellenverzeichnis}
 \addcontentsline{toc}{section}{Literaturverzeichnis und Quellenverzeichnis}
 \textbf{{\LARGE Internetquellen:}}\\
 \url{http://www.itwissen.info/IP-Multicast-IP-multicast.html}\\
